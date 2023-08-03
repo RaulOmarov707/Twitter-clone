@@ -1,0 +1,1804 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    /* overflow-y: hidden; */
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ :root {
+    --main-bg-color: #20a1f1;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+.main {
+    display: flex;
+}
+
+.main.signup.step2,
+.main.signup.step3,
+.main.signup.step4,
+.main.signup.step5 {
+    display: none;
+}
+
+.left-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50vw;
+    height: 85vh;
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.left-inner img {
+    height: auto;
+    max-height: 300px;
+    margin: auto;
+}
+
+.right-inner {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-left: 50px;
+}
+
+.right-inner img {
+    height: 50px;
+}
+
+.right-inner h1 {
+    letter-spacing: 3px;
+    margin-top: 40px;
+    font-size: 64px;
+    font-weight: 900;
+}
+
+.right-inner h2 {
+    letter-spacing: 3px;
+    margin-top: 60px;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#btn-signup {
+    width: 100%;
+    max-width: 380px;
+    height: 48px;
+    background-color: var(--main-bg-color);
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    font-weight: 900;
+    font-size: 16px;
+    border-radius: 25px;
+    outline: none;
+}
+
+#btn-login {
+    margin-top: 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--main-bg-color);
+    cursor: pointer;
+    background-color: #fff;
+    width: 100%;
+    max-width: 380px;
+    height: 48px;
+    border: 1px solid var(--main-bg-color);
+    outline: none;
+}
+
+#btn-login:hover {
+    background-color: rgba(26, 161, 242, 0.1);
+}
+
+#btn-signup:hover {
+    background-color: rgb(26, 145, 218);
+}
+
+.footer-inner {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.footer-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-nav ul li:not(:last-child) {
+    margin-right: 16px;
+}
+
+.footer-nav ul li {
+    position: relative;
+    line-height: 20px;
+}
+
+.footer-nav ul li::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    border: 1px solid #5b7083;
+}
+
+.footer-nav ul li:hover::after {
+    visibility: visible;
+}
+
+.footer-nav ul li a {
+    text-decoration: none;
+    color: #5b7083;
+    font-size: 14px;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-copy span {
+    text-align: center;
+    text-decoration: none;
+    color: #5b7083;
+    font-size: 14px;
+}
+
+
+/* Login Page */
+
+.login-inner {
+    padding-top: 20px;
+    width: 100%;
+    max-width: 336px;
+    margin: auto
+}
+
+.login-inner img {
+    height: 40px;
+}
+
+.login-inner h1 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 31px;
+    font-weight: 900;
+}
+
+.login-inner .btn {
+    width: 100%;
+    background-color: var(--main-bg-color);
+    height: 48px;
+    margin-top: 30px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 25px;
+    outline: none;
+}
+
+.login-inner .btn:hover {
+    background-color: rgb(26, 145, 218);
+}
+
+.login-inner .form-floating label {
+    color: rgb(133, 133, 133);
+    padding-top: 20px;
+}
+
+.login-inner input[type=email],
+.login-inner input[type=password] {
+    font-size: 18px;
+}
+
+.login-inner input[type=email]:focus,
+.login-inner input[type=password]:focus {
+    outline: none;
+    border: 2px solid var(--main-bg-color);
+    box-shadow: none;
+    font-size: 20px;
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
+    color: rgb(26, 145, 218);
+    opacity: 1;
+}
+
+.login-forgot {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-forgot span a {
+    color: var(--main-bg-color);
+    text-decoration: none;
+}
+
+.login-forgot span:hover {
+    border-bottom: 1px solid var(--main-bg-color);
+}
+
+#separate {
+    height: 1px;
+    display: inline-block;
+    color: #5b7083;
+    margin: 0 6px;
+    transform: translateY(-5px);
+}
+
+
+/* SignUp Page */
+
+.main.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #999;
+}
+
+.signup-inner {
+    background-color: #fff;
+    border-radius: 16px;
+    height: 590px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 0px 32px;
+}
+
+.signup-inputs h1 {
+    font-size: 23px;
+    font-weight: 900;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.signup-header {
+    position: relative;
+    text-align: center;
+}
+
+.signup-inner .btn {
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    width: 66px;
+    padding: 0 15px;
+    background-color: var(--main-bg-color);
+    height: 32px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 25px;
+    outline: none;
+}
+
+.signup-inner .btn:hover {
+    background-color: rgb(26, 145, 218);
+}
+
+.main.signup .signup-inner img {
+    height: 29px;
+    margin-top: 10px;
+}
+
+.signup-inner input[type=text],
+.signup-inner input[type=tel] {
+    font-size: 16px;
+    color: #0f1419;
+}
+
+.signup-inner input[type=text]:focus,
+.signup-inner input[type=tel]:focus,
+.signup-inner input[type=email]:focus,
+.signup-inner input[type=password]:focus {
+    outline: none;
+    border: 2px solid var(--main-bg-color);
+    box-shadow: none;
+}
+
+.signup-inner #charCount {
+    position: absolute;
+    color: #5b7083;
+    font-size: 13px;
+    top: 10px;
+    right: 10px;
+}
+
+.signup-inner .form-floating label {
+    color: #5b7083;
+    padding-top: 20px;
+}
+
+.signup-hint {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-hint a {
+    width: fit-content;
+    margin-bottom: 35px;
+    font-size: 15px;
+    color: var(--main-bg-color);
+    text-decoration: none;
+}
+
+.signup-hint a:hover {
+    text-decoration: underline;
+}
+
+.signup-hint span {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.signup-hint p {
+    font-size: 15px;
+    color: #5b7083;
+    line-height: 20px;
+}
+
+.signup-inputs .form-floating.email {
+    display: none;
+}
+
+#changeToPhone {
+    display: none;
+}
+
+.date-inputs {
+    display: flex;
+}
+
+.select-month {
+    /* width: 259px; */
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.select-day {
+    /* width: 117px; */
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.select-year {
+    /* width: 137px; */
+    cursor: pointer;
+}
+
+.select-month:focus,
+.select-day:focus,
+.select-year:focus {
+    outline: none;
+    border: 2px solid var(--main-bg-color);
+    box-shadow: none;
+    background-image: url(../img/arrow-blue.svg);
+}
+
+.select-month:focus~label,
+.select-day:focus~label,
+.select-year:focus~label {
+    color: var(--main-bg-color) !important;
+}
+
+
+/* Forget Password page */
+
+.forgot-inner {
+    display: flex;
+    max-width: 622px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main.forgot {
+    flex-direction: column;
+}
+
+.main.forgot .container {
+    max-width: 100%;
+}
+
+.main.forgot .nav {
+    box-shadow: 0 0 3px #aaa;
+    border-bottom: 1px solid #e1e8ed;
+    border-bottom: 0 solid rgba(0, 0, 0, 0.25);
+    color: #66757f;
+    background: white;
+}
+
+.main.forgot .nav-inner {
+    min-height: 40px;
+    max-width: 622px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main.forgot .nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.main.forgot .nav-logo img {
+    height: 22px;
+    margin-right: 6px;
+}
+
+.main.forgot .nav-logo span {
+    font-size: 16px;
+    color: #66757f
+}
+
+.main.forgot .dropdown-menu {
+    line-height: initial;
+    top: 100%;
+    left: -113%;
+    border-radius: 4px !important;
+}
+
+.main.forgot .dropdown-menu::before {
+    position: absolute;
+    right: 15px;
+    top: -8px;
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #FFFFFF;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+}
+
+.main.forgot .dropdown {
+    line-height: 40px;
+}
+
+#langdrop,
+#langdrop+.dropdown-menu .dropdown-item {
+    font-size: 14px;
+    color: #66757f;
+}
+
+.main.forgot .dropdown:hover .dropdown-menu {
+    display: flex !important;
+}
+
+.main.forgot .dropdown-item:hover {
+    color: #fff !important;
+    background-color: #66757f;
+}
+
+.btn-check:active+.btn-secondary:focus,
+.btn-check:checked+.btn-secondary:focus,
+.btn-secondary.active:focus,
+.btn-secondary:active:focus,
+.show>.btn-secondary.dropdown-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-check:focus+.btn-secondary,
+.btn-secondary:focus {
+    box-shadow: none;
+}
+
+.main.forgot .dropdown .btn {
+    color: #66757f;
+    border: none;
+}
+
+.forgot-content {
+    margin-top: 46px
+}
+
+.forgot-content h1 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 36px;
+}
+
+.forgot-content h2 {
+    display: none;
+    margin-bottom: 36px;
+    font-size: 28px;
+    color: #c33;
+    font-weight: 200;
+}
+
+.forgot-content p {
+    font-size: 14px;
+    color: #292f33;
+}
+
+#forgotInput {
+    height: 34px;
+    padding: 7px 15px 5px;
+    width: 332px;
+    border-radius: 18px;
+    border: 1px solid #ccd6dd;
+    outline: 0;
+    margin-top: 20px;
+}
+
+#forgotInput.is-invalid {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+#forgotInput.is-invalid:focus {
+    box-shadow: 0 0 0 1px #dc3545;
+    border-color: #dc3545;
+}
+
+#forgotInput:focus {
+    box-shadow: 0 0 0 1px #99cdf4;
+    border-color: #99cdf4;
+}
+
+.forgot-content .search-btn {
+    width: 81px;
+    padding: 0 15px;
+    background-color: var(--main-bg-color);
+    height: 32px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 25px;
+    outline: none;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.forgot-content .search-btn:hover {
+    background-color: rgb(26, 145, 218);
+}
+
+.forgot-content .search-btn:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #71c9f8;
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    background-image: none;
+    border: 2px solid #dc3545;
+}
+
+.form-floating>.form-control.is-invalid:focus~label,
+.form-floating>.form-control.is-invalid:not(:placeholder-shown)~label {
+    color: #dc3545 !important;
+}
+
+.signup-inner .form-control.is-invalid:focus {
+    outline: none !important;
+    border: 2px solid #dc3545 !important;
+    box-shadow: none !important;
+}
+
+
+/* SignUp Page Step 2 */
+
+.close-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: 4px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color .1s linear;
+}
+
+.close-wrapper:hover {
+    background: rgba(29, 161, 242, 0.1);
+}
+
+.close-wrapper>button {
+    opacity: 1;
+    background: transparent url(../img/close-blue.svg) center/1em auto no-repeat;
+    height: 20px;
+    width: 20px;
+}
+
+.close-wrapper>button:hover {
+    opacity: 1;
+}
+
+.close-wrapper>button:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.step2-track {
+    padding-left: 10px;
+}
+
+.step2-track .track-check>label {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.step2-track .check-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    padding: 12px;
+    left: -15px;
+    top: 4px;
+    transform: translateX(15px);
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color .1s linear;
+    cursor: pointer;
+}
+
+.step2-track .check-wrapper.active:hover {
+    background-color: rgba(29, 161, 242, 0.1);
+}
+
+.step2-track .check-bg {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    border-color: rgb(91, 112, 131);
+    border-radius: 4px;
+}
+
+.step2-track .check-bg.active {
+    border: none;
+    outline: none;
+    background-color: var(--main-bg-color);
+}
+
+.step2-track .check-bg img {
+    opacity: 0;
+    height: 14px !important;
+    width: 16px;
+    z-index: 999;
+    margin-top: 0 !important;
+}
+
+.step2-track .check-bg.active img {
+    opacity: 1;
+}
+
+.step2-track .check-wrapper>input {
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.check-wrapper:hover {
+    background: rgba(91, 112, 131, 0.1);
+}
+
+#trackCheckLabel {
+    margin-bottom: 40px;
+}
+
+.step2-track h1 {
+    margin-top: 10px;
+    margin-bottom: 44px;
+    font-size: 23px;
+    font-weight: 700;
+    color: #0f1419;
+}
+
+.step2-track strong {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f1419;
+}
+
+.step2-track p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #212529;
+    margin-top: 12px;
+    line-height: 20px;
+}
+
+.step2-track span {
+    font-size: 15px;
+    color: #5b7083;
+    margin-top: 40px;
+    line-height: 20px;
+}
+
+.step2-track span a {
+    font-size: 15px;
+    color: rgb(27, 149, 224);
+    text-decoration: none;
+}
+
+.step2-track span a:hover {
+    text-decoration: underline;
+}
+
+
+/* SignUp Page step 3*/
+
+.signup-header.step3 h1 {
+    text-align: left;
+    transform: translate(45px, 14px);
+    font-size: 20px;
+    color: #0f1419;
+    font-weight: 900;
+}
+
+.signup-inputs.step3 h1 {
+    margin-top: 50px;
+    font-weight: 700;
+}
+
+.step3-policy {
+    margin-top: 70px;
+}
+
+.step3-policy p {
+    line-height: 20px;
+    font-size: 15px;
+    color: #0f1419;
+}
+
+.step3-policy p>a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #1b95e0;
+}
+
+.step3-policy p>a:hover {
+    text-decoration: underline;
+}
+
+.step3-policy>#btn-signup {
+    max-width: 100%;
+    margin-top: 16px;
+}
+
+#step3EmailInput {
+    display: none;
+}
+
+
+/* SignUp Page step 4*/
+
+.step4-emailConfirm {
+    margin-bottom: 10px;
+}
+
+.step4-emailConfirm p {
+    color: #5b7083;
+    font-size: 15px;
+    line-height: 22px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.step4-hint a {
+    color: #1b95e0;
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+}
+
+.step4-hint a:hover {
+    text-decoration: underline;
+}
+
+
+/* SignUp Page step 5*/
+
+.step5-passwordConfirm {
+    margin-bottom: 10px;
+}
+
+.step5-passwordConfirm p {
+    color: #5b7083;
+    font-size: 15px;
+    line-height: 22px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.step5-hint span {
+    color: #1b95e0;
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+}
+
+.step5-hint span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.step5-hint #hide-pass {
+    display: none;
+}
+
+
+/* Authorized Home Page*/
+
+.home {
+    height: 100%;
+}
+
+.home .container,
+.home .row.left {
+    height: 100%;
+}
+
+.auth-left {
+    height: 100%;
+}
+
+.auth-left.nav {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.auth-left-inner {
+    width: 275px;
+    height: 100%;
+    display: flex;
+    padding-top: 5px;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.auth.twitter-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    padding: 9px;
+    border-radius: 50%;
+}
+
+.auth.twitter-logo:hover {
+    background-color: #e8f5fe;
+}
+
+.auth.twitter-logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.twitter-logo img {
+    width: 30px;
+    height: 28px;
+}
+
+.auth-left .element img {
+    width: 30px;
+    height: 25px;
+}
+
+.element {
+    width: fit-content;
+    display: flex;
+    padding: 12px 12px;
+    margin-top: 3px;
+    cursor: pointer;
+    transition-duration: 100ms;
+    text-decoration: none;
+}
+
+.twitter-logo-home span::before {
+    content: url('../img/twitter-home-black.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+
+.twitter-logo-home:hover span::before {
+    content: url('../img/twitter-home-blue.svg');
+}
+
+.twitter-logo-explore span::before {
+    content: url('../img/sharp-black.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+
+.twitter-logo-explore:hover span::before {
+    content: url('../img/sharp-blue.svg');
+}
+
+.twitter-logo-notifications span::before {
+    content: url('../img/notification.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+
+.twitter-logo-notifications:hover span::before {
+    content: url('../img/notification-blue.svg');
+}
+
+.twitter-logo-messages span::before {
+    content: url('../img/message.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+
+.twitter-logo-messages:hover span::before {
+    content: url('../img/message-blue.svg');
+}
+
+.twitter-logo-bookmarks span::before {
+    content: url('../img/bookmark.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+
+.twitter-logo-bookmarks:hover span::before {
+    content: url('../img/bookmark-blue.svg');
+}
+
+.twitter-logo-lists span::before {
+    content: url('../img/list.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+
+.twitter-logo-lists:hover span::before {
+    content: url('../img/list-blue.svg');
+}
+
+.twitter-logo-profile span::before {
+    content: url('../img/profile.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+
+.twitter-logo-profile:hover span::before {
+    content: url('../img/profile-blue.svg');
+}
+
+.twitter-logo-more span::before {
+    content: url('../img/more.svg');
+    width: 30px;
+    height: 25px;
+    margin-right: 1rem;
+}
+
+.twitter-logo-more:hover span::before {
+    content: url('../img/more-blue.svg');
+}
+
+.element span {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #0f1419;
+    font-weight: 700;
+}
+
+.element:hover {
+    background-color: #e8f5fe;
+    border-radius: 24px;
+}
+
+.element:hover span {
+    color: #1DA1F2;
+}
+
+.btn-tweet {
+    margin-top: 10px;
+    width: 220px;
+    height: 48px;
+    background-color: var(--main-bg-color);
+    border: none;
+    color: #fff;
+    letter-spacing: .6px;
+    font-weight: 900;
+    font-size: 13px;
+    border-radius: 25px;
+    outline: none;
+    transition-duration: 100ms;
+}
+
+.btn-tweet:hover {
+    color: #fff;
+    background-color: rgb(26, 145, 218);
+}
+
+.auth-left-profile {
+    cursor: pointer;
+    position: relative;
+}
+
+.auth-left-profile .main-profile {
+    width: fit-content;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.auth-left-profile .main-profile:hover {
+    background-color: #e8f5fe;
+}
+
+.auth-left-profile .profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.auth-left-profile .profile-name {
+    margin-left: 10px;
+}
+
+.auth-left-profile .profile-name h1 {
+    margin-bottom: 3px;
+    font-weight: 700;
+    color: #0f1419;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+
+.auth-left-profile .profile-name span {
+    color: #5b7083;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+
+.auth-left-profile .profile-dots img {
+    width: 16px;
+    height: 16px;
+}
+
+.auth-left-profile .profile-dots {
+    margin-left: 40px;
+}
+
+.page-wrapper {
+    display: none;
+}
+
+.page-wrapper.active {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.pop-profile {
+    display: none;
+}
+
+.pop-profile.active {
+    display: flex;
+    padding: 12px 0;
+    width: 300px;
+    height: 202px;
+    position: absolute;
+    left: -10px;
+    top: -212px;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 1.00);
+    box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
+    border-radius: 16px;
+    z-index: 2;
+}
+
+.pop-profile::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #fff;
+    filter: drop-shadow(rgb(196, 207, 214) -1px 1px 1px);
+}
+
+.pop-profile-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.pop-profile-credits {
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.pop-profile-icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.pop-profile-name {
+    margin-left: 10px;
+}
+
+.pop-profile-name h1 {
+    margin-bottom: 3px;
+    font-weight: 700;
+    color: #0f1419;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+
+.pop-profile-name span {
+    color: #5b7083;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+
+.pop-profile-check {
+    margin-left: auto;
+}
+
+.pop-profile-check img {
+    width: 16px;
+    height: 16px;
+}
+
+.pop-profile-add {
+    padding: 16px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: rgb(235, 238, 240)
+}
+
+.pop-profile-logout {
+    padding: 16px;
+}
+
+.pop-profile-add:hover,
+.pop-profile-logout:hover {
+    background-color: rgb(247, 249, 250);
+}
+
+.pop-profile-add span,
+.pop-profile-logout span {
+    font-size: 15px;
+    color: #0f1419;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* Authorized page Center */
+
+.auth-center {
+    padding: 0;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: rgb(235, 238, 240)
+}
+
+.auth-center-head {
+    position: relative;
+    padding: 0 16px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    border-color: rgb(235, 238, 240)
+}
+
+.auth-center-head .home {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #0f1419;
+    font-weight: 800;
+}
+
+.top-tweets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.top-tweets img {
+    padding: 6px;
+}
+
+.top-tweets:hover {
+    background-color: #e8f5fe;
+}
+
+.auth-center-post {
+    padding: 6px 16px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.post-icon img {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.post-content {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.post-text {
+    width: 100%;
+}
+
+.post-text textarea {
+    border: none;
+    padding-top: 15px;
+    outline: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    height: 50px;
+    width: 100%;
+    resize: none;
+}
+.post-reply-holder {
+    position: relative;
+    display: none;
+    padding-bottom: 10px;
+    border-bottom: 1px solid;
+    border-color: rgb(235, 238, 240)
+}
+
+.post-reply.everyone {
+    display: none;
+}
+.post-reply.followed {
+    display: none;
+}
+.post-reply.mentioned {
+    display: none;
+}
+
+.post-reply.active {
+    display: block;
+    transition-duration: 200ms;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 22px;
+    width: fit-content;
+    border-radius: 15px;
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.post-reply:hover {
+    background-color: #e8f5fe;
+}
+
+.post-reply img {
+    width: 18px;
+    height: 18px;
+}
+
+.post-reply span {
+    margin-left: 5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    color: #1DA1F2;
+    font-weight: 700;
+}
+.post-media-inputs {
+    display: flex;
+    align-items: center;
+}
+
+.post-media {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-svg {
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.post-media img {
+    padding: 1px;
+    cursor: pointer;
+    width: 23px;
+    height: 23px;
+}
+.post-item.file > label {
+    height: 23px;
+    width: 23px;
+}
+.post-item.file input {
+    cursor: pointer;
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    z-index: 1;
+    opacity: 0;
+}
+.post-item.file input[type=file]::-webkit-file-upload-button { 
+    cursor: pointer; 
+}
+.post-item {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+} 
+.post-item:not(:first-child) {
+    margin-left: 10px
+}
+
+.post-item:hover {
+    background-color: #e8f5fe;
+    
+}
+.post-media-button .btn-tweet{
+    margin-top: 0;
+    width: 77px;
+    height: 40px;
+}
+.latest-tweets {
+    display: none;
+}
+.latest-tweets.active {
+    display: block;
+    z-index: 999;
+    right: 6px;
+    top: 6px;
+    width:351px;
+    height: 239px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1.00);
+    box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
+}
+.latest-tweets-inner {
+    display: flex;
+    flex-direction: column;
+}
+.latest-img {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: center;
+}
+.latest-img img {
+    width: 50px;
+    height: 50px;
+}
+.latest-text {
+    border-bottom: 1px solid;
+    border-color: rgb(235, 238, 240);
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+.latest-switch-inner {
+    cursor: pointer;
+    align-items: center;
+    padding: 16px;
+    display: flex;
+}
+.latest-switch-inner:hover,
+.latest-preference-inner:hover {
+    background-color: rgb(247, 249, 250);
+
+}
+.switch-hint{
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.switch-hint strong {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #000;
+    font-family: 'Roboto',sans-serif;
+}
+.switch-hint span {
+    font-size: 13px;
+    color: #5b7083;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.latest-preference-inner {
+    cursor: pointer;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+}
+.latest-preference-inner span {
+    font-size: 15px;
+    color: #0f1419;
+    margin-left: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+.latest-tweets .latest-switch img {
+    width: 20px;
+    height: 20px;
+}
+.latest-tweets  .latest-preference img {
+    width: 20px;
+    height: 20px;
+}
+
+.pop-reply.followed{
+    display: none;
+}
+.pop-reply.mentioned {
+    display: none;
+}
+.pop-reply.everyone {
+    display: none;
+
+}
+.pop-reply.active {
+    display: block;
+    border-radius: 15px;
+    padding-top: 16px;
+    padding-bottom: 4px;
+    width: 320px;
+    height: 284px;
+    background-color: rgba(255, 255, 255, 1.00);
+    box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
+    position: absolute;
+    top: 50px;
+    left: -83px;
+    z-index: 999;
+}
+.pop-reply::before {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top:-9px;
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid #fff;
+    filter: drop-shadow(rgb(196, 207, 214) 1px -1px 1px);
+
+}
+.pop-reply-inner img {
+    width: 23px;
+    height: 23px;
+}
+.pop-reply-hint {
+    padding: 0 16px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+}
+.pop-reply-hint strong {
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+}
+.pop-reply-hint span {
+    line-height: 20px;
+    color: #5b7083;
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.pop-reply-everyone,
+.pop-reply-followed,
+.pop-reply-mentioned {
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+}
+.pop-reply-everyone:hover,
+.pop-reply-followed:hover,
+.pop-reply-mentioned:hover {
+    background-color: rgb(247, 249, 250);
+}
+
+.pop-reply-everyone span,
+.pop-reply-followed span,
+.pop-reply-mentioned span {
+    margin-left: 12px;
+    font-size: 15px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.everyone-wrap,
+.followed-wrap,
+.mentioned-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   width: 40px;
+   height: 40px;
+   background: #20a1f1;
+   border-radius: 50%;
+}
+@media only screen and (max-width: 992px) {
+    .footer-nav ul li a {
+        line-height: 30px;
+    }
+    .main.unauthorized {
+        padding-top: 40px;
+        flex-direction: column-reverse;
+    }
+    .right {
+        margin: auto;
+    }
+    .right-inner {
+        padding: 0;
+    }
+    .buttons {
+        margin-bottom: 60px;
+        flex-direction: row;
+    }
+    .left-inner {
+        width: 100%;
+        height: 45vh;
+    }
+    #btn-login,
+    #btn-signup {
+        flex-shrink: 0;
+        margin: 0;
+        max-width: 254px;
+    }
+    #btn-signup {
+        margin-right: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .nav-inner,
+    .forgot-inner {
+        padding: 0 40px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #forgotInput {
+        width: 282px;
+    }
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    .right {
+        padding: 0 20px;
+    }
+    #btn-signup {
+        margin-bottom: 20px;
+        max-width: 300px;
+        margin-right: 0;
+    }
+    #btn-login {
+        max-width: 300px;
+        margin-right: 0;
+    }
+}
